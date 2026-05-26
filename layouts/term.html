@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="term">
+  <nav class="nav">
+    Tags:
+    <ul id="all-tags">
+      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+      <li><a href="{{ "tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }} ({{ $taxonomy.Count }})</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+  <div class="posts">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    {{ range .Pages }}
+      {{ partial "pageCard.html" . }}
+    {{ end }}
+  </div>
+  <aside class="aside"></aside>
+</div>
+{{ end }}

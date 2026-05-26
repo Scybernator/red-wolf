@@ -1,0 +1,15 @@
+{{ $image := partial "imagextractor.html" . }}
+<!-- {{ $image }} -->
+<section class="page-card">
+    <div>
+        <img src="{{ $image.url }}?v={{ now.Unix }}" alt="{{ $image.alt }}" class="page-card-img" /> 
+    </div>
+    <div>
+        <h2>
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}
+                {{if .Params.subtitle }}: {{ .Params.subtitle }}{{ end }}
+            </a>
+        </h2>
+        {{ .Summary }}
+    </div>
+</section>

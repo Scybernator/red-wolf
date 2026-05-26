@@ -1,0 +1,21 @@
+baseURL = 'https://example.org/'
+locale = 'en-US'
+title = 'Site Title'
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.146.0'
+
+# why doesn't this work at the theme level?
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 4
+    ordered = true

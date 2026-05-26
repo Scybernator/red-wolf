@@ -1,0 +1,29 @@
+{{ define "main" }}
+<!-- Home.html -->
+<div class="home">
+  <div class="content hero">
+    <div style="display: flex; align-items: center;">
+      {{ $image := resources.GetMatch "images/hero.png" }}
+      {{ $mask := images.Mask (resources.Get "images/circle_mask.png") }}
+      {{ with $image | images.Filter $mask}}
+      <img src="{{ .RelPermalink }}" style="margin:8px;">
+      {{ end }}
+      {{ .Content }}
+    </div>
+  </div>
+  <nav class="nav">
+    Tags:
+    <ul id="all-tags">
+      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+      <li><a href="{{ "tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }} ({{ $taxonomy.Count }})</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+  <div class="posts">
+    {{ range site.RegularPages }}
+      {{ partial "pageCard.html" . }}
+    {{ end }}
+  </div>
+  <aside class="aside"></aside>
+</div>
+{{ end }}

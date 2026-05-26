@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale }}" dir="{{ or site.Language.Direction `ltr` }}">
+<head>
+  {{ partial "head/head.html" . }}
+</head>
+<body>
+  <header  class="header">
+    {{ partial "header.html" . }}
+  </header>
+  <main  class="main">
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer  class="footer">
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+</html>

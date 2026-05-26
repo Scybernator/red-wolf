@@ -1,0 +1,85 @@
+<!-- https://github.com/guangmean/Niello/blob/master/layouts/partials/imagextractor.html -->
+<!-- Problems:
+1. This doesn't return the absolute URL of the image, so it only works in certain contexts
+2. When returning the default image, doesn't access global resources
+2. The regex doesn't prioritize images that match the title of post
+
+Spec:
+1. If there is a featuredImage, return that one
+  Should be a resource of the post, i.e. in the same directory
+    /featured.jpg
+    featured.jpg
+2. If there is an image in the post folder (i.e. resource) that matches the post name, use that one
+3. If there are images inside the post, use the first one
+4. If there is an /assets/images/default.png/jpg/webp, use it, unless configuration is set to noDefaultImage -->
+
+<!-- Init -->
+{{ $page := . }}
+{{ $image := "" }}
+{{ $alt := "" }}
+<!-- There isn't (afaik) a way to get the name of the containing folder of a page (e.g.) "post1" from "/posts/post1",
+so this hack will have to do -->
+{{ $pagePath := index (index (findRESubmatch `\/(\w+?)$` .IdentifierBase ) 0) 1}} 
+
+<!-- Taxonomy image, eg: categories -->
+{{ if eq $page.Kind "term" }}
+    {{ $pages := where site.RegularPages "Params.categories" "intersect" (slice .context.Title) }}
+    {{ with first 1 $pages }}
+        {{ $page = index . 0 }}
+    {{ end }}
+{{ end }}
+
+<!-- Taxonomy image, eg: tags -->
+{{ if eq $page.Kind "term" }}
+    {{ $pages := where site.RegularPages "Params.tags" "intersect" (slice .context.Title) }}
+    {{ with first 1 $pages }}
+        {{ $page = index . 0 }}
+    {{ end }}
+{{ end }}
+
+<!-- Check if the Markdown file contains a featured image in the front matter -->
+{{ $pageResources :=  $page.Resources.ByType "image" }}
+{{ range $pageResources }}
+    {{ if eq .Name $page.Params.featuredImage }}
+        {{ $image = .RelPermalink }}
+    {{ end }} 
+{{ end }}
+
+<!-- Check if there is an image in the page resources that matches the post name -->
+{{ if eq $image "" }}
+  {{ range $pageResources }}
+      {{ if hasPrefix .Name $pagePath }}
+          {{ $image = .RelPermalink }}
+      {{ end }} 
+  {{ end }}
+{{end}}
+
+<!-- Check if there is any image in the page resources-->
+{{ if eq $image "" }}
+  {{ range $pageResources }}
+    {{ $image = .RelPermalink }}
+    {{ break }}
+  {{ end }}
+{{end}}
+
+<!-- Regex the content looking for any remote images -->
+<!-- TODO ALY: do we want to support this? -->
+<!-- Remote image eg: https://xxx.com/abc.jpeg -->
+{{ if eq $image "" }}
+  {{ $regex := `https:\/\/[^\s]+\.(jpg|jpeg|png|webp)` }}
+  {{ $images := findRE $regex $page.Content }}
+  {{ with index $images 0 }}
+  {{ $image = . | safeURL }}
+  {{ end }}
+{{ end }}
+
+<!-- Return a placeholder image if no images -->
+<!-- TODO ALY: check if default image exists
+check settings flag  -->
+{{ if eq $image "" }}
+  {{ $image = "/images/default.jpg" }}
+{{ end }}
+
+{{ $result := dict "url" $image "alt" $alt "featuredImage" $page.Params.featuredImage "pagePath" $pagePath}}
+
+{{ return $result }}

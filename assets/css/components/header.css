@@ -1,0 +1,8 @@
+header {
+  /* border-bottom: 1px solid gray; */
+  border-bottom: thin solid #0a7957;
+  border-radius: 50px;
+  box-shadow: 0px 5px 5px #0a7957;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
