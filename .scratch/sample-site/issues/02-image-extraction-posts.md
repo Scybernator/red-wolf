@@ -1,4 +1,4 @@
-Status: ready-for-agent
+Status: closed
 
 # Image extraction demo posts with tags
 
