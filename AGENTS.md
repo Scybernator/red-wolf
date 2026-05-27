@@ -7,11 +7,16 @@
 
 ## Commands
 
-This is a **theme**, not a standalone site. Build/preview from a Hugo site that uses the theme:
+This is a **theme**, not a standalone site. The repo includes an `exampleSite/` for development and previewing:
 
 ```shell
-hugo server    # dev server from site dir with `theme = 'red-wolf'`
-hugo           # production build
+hugo server --source exampleSite    # dev server with live reload
+hugo --source exampleSite            # production build
+```
+
+To preview from a real site:
+```shell
+hugo server    # from a site dir with `theme = 'red-wolf'`
 ```
 
 ## Asset pipeline
@@ -22,7 +27,7 @@ hugo           # production build
 
 ## Required asset images
 
-The theme expects these in `assets/images/` (they don't exist yet):
+The theme expects these in `assets/images/`:
 
 | File | Used by | Notes |
 |------|---------|-------|

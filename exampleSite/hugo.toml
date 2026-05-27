@@ -1,0 +1,17 @@
+baseURL = 'https://example.org/'
+locale = 'en-US'
+title = 'Red Wolf Demo'
+theme = 'red-wolf'
+themesDir = '../..'
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 4
+    ordered = true

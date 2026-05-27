@@ -1,2 +1,9 @@
 .DS_Store
 MeRead.md
+
+# Hugo build artifacts
+public/
+exampleSite/public/
+exampleSiteBuild/
+resources/
+*.hugo_build.lock
