@@ -9,6 +9,14 @@ themesDir = '../..'
     name = 'Home'
     pageRef = '/'
     weight = 10
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 20
+  [[menus.main]]
+    name = 'Projects'
+    pageRef = '/projects'
+    weight = 30
 
 [markup]
   [markup.tableOfContents]
