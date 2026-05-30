@@ -1,4 +1,4 @@
-Status: ready-for-agent
+Status: closed
 
 ## What to build
 
@@ -22,14 +22,14 @@ Featured post system and page card restyling for `home.html` and `term.html`.
 
 ## Acceptance criteria
 
-- [ ] `featured: true` front matter promotes a page to featured card
-- [ ] Ordered by date descending when multiple featured
-- [ ] Fallback to most recent page by date when no featured
-- [ ] Featured card renders with larger image and more vertical space
-- [ ] Non-featured cards are indented relative to hero/featured
-- [ ] Yellow first-card badge removed
-- [ ] All card colors/shading use CSS custom properties from `:root`
-- [ ] Demo content updated: at least one post gets `featured: true` in exampleSite
+- [x] `featured: true` front matter promotes a page to featured card
+- [x] Ordered by date descending when multiple featured
+- [x] Fallback to most recent page by date when no featured
+- [x] Featured card renders with larger image and more vertical space
+- [x] Non-featured cards are indented relative to hero/featured
+- [x] Yellow first-card badge removed
+- [x] All card colors/shading use CSS custom properties from `:root`
+- [x] Demo content updated: at least one post gets `featured: true` in exampleSite
 
 ## Blocked by
 

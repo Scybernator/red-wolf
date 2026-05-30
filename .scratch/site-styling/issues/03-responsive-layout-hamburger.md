@@ -1,4 +1,4 @@
-Status: ready-for-agent
+Status: closed
 
 ## What to build
 
@@ -23,16 +23,16 @@ The hamburger should be implemented with minimal JS. A single function that togg
 
 ## Acceptance criteria
 
-- [ ] Desktop layout unchanged from current (aside from empty aside removal on `.home` and `.term`)
-- [ ] Below 768px, all pages display as single-column stacked layout
-- [ ] Hamburger button appears in header below 768px, is hidden on desktop
-- [ ] Tapping hamburger opens a drawer that slides in from the left
-- [ ] Drawer contains the nav content (tag cloud on home/term, ToC on page)
-- [ ] Tapping hamburger again or clicking outside drawer closes it
-- [ ] Tapping a drawer link closes the drawer
-- [ ] Header is sticky on mobile, static on desktop
-- [ ] CSS transition for drawer slide (smooth, not instant)
-- [ ] No external JS dependencies
+- [x] Desktop layout unchanged from current (aside from empty aside removal on `.home` and `.term`)
+- [x] Below 768px, all pages display as single-column stacked layout
+- [x] Hamburger button appears in header below 768px, is hidden on desktop
+- [x] Tapping hamburger opens a drawer that slides in from the left
+- [x] Drawer contains the nav content (tag cloud on home/term, ToC on page)
+- [x] Tapping hamburger again or clicking outside drawer closes it
+- [x] Tapping a drawer link closes the drawer
+- [x] Header is sticky on mobile, static on desktop
+- [x] CSS transition for drawer slide (smooth, not instant)
+- [x] No external JS dependencies
 
 ## Blocked by
 

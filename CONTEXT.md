@@ -4,6 +4,38 @@
 
 - **Earthy / natural** — the theme conveys a grounded, organic feel. Colors and typography draw from natural landscapes rather than synthetic or corporate palettes.
 
+### Color palette: Forest & bark
+
+Defined via CSS custom properties in `assets/css/main.css:7`.
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--color-bg` | `#F5F0E8` | Page background (warm cream) |
+| `--color-text` | `#1A1A1A` | Body text (near-black) |
+| `--color-accent` | `#2D5A27` | Borders, shadows, primary accent (deep green) |
+| `--color-accent-secondary` | `#6B4226` | Secondary accent (warm brown) |
+| `--color-surface` | `#FFFFFF` | Card/surface backgrounds |
+| `--color-border` | `#D4B895` | Subtle borders (tan) |
+| `--color-link` | `#2D5A27` | Link color (deep green, unused — links are unstyled per design choice) |
+
+### Border & shadow language
+
+- **Heavy rounded borders** — `--radius-sm: 8px`, `--radius-md: 16px`, `--radius-lg: 25px`; hero/header elements may use larger (50px) radii.
+- **Colored shadows** — `--shadow-md` uses `--color-accent` (deep green) tinted at 25% opacity.
+
+### Spacing scale (1rem base)
+
+| Token | Value |
+|-------|-------|
+| `--space-xs` | `0.5rem` |
+| `--space-sm` | `1rem` |
+| `--space-md` | `2rem` |
+| `--space-lg` | `4rem` |
+
+### Link styling
+
+- No color or underline decoration. Only `cursor: pointer` signals clickability.
+
 ## Typography
 
 - **No external fonts** — all typefaces are system-installed. No Google Fonts, no `@font-face` loading.

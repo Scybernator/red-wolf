@@ -1,0 +1,9 @@
+<nav id="drawer">
+  <button id="drawer-close" aria-label="Close menu">✕</button>
+  {{ if eq .Kind "page" }}
+    {{ .TableOfContents }}
+  {{ else }}
+    {{ partial "tagcloud.html" . }}
+  {{ end }}
+</nav>
+<div id="drawer-overlay"></div>

@@ -1,6 +1,8 @@
 {{ define "main" }}
-<!-- Home.html -->
 <div class="home">
+  <nav class="nav">
+    {{ partial "tagcloud.html" . }}
+  </nav>
   <div class="content hero">
     <div style="display: flex; align-items: center;">
       {{ $image := resources.GetMatch "images/hero.png" }}
@@ -11,19 +13,26 @@
       {{ .Content }}
     </div>
   </div>
-  <nav class="nav">
-    Tags:
-    <ul id="all-tags">
-      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-      <li><a href="{{ "tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }} ({{ $taxonomy.Count }})</a></li>
-      {{ end }}
-    </ul>
-  </nav>
   <div class="posts">
-    {{ range site.RegularPages }}
-      {{ partial "pageCard.html" . }}
+    {{ $allPages := sort site.RegularPages "Date" "desc" }}
+    {{ $featuredPages := where $allPages "Params.featured" true }}
+    {{ if $featuredPages }}
+      {{ range $featuredPages }}
+        {{ partial "pageCard.html" (dict "page" . "featured" true) }}
+      {{ end }}
+      {{ $nonFeatured := where $allPages "Params.featured" "ne" true }}
+      {{ range $nonFeatured }}
+        {{ partial "pageCard.html" (dict "page" . "featured" false) }}
+      {{ end }}
+    {{ else }}
+      {{ with index $allPages 0 }}
+        {{ partial "pageCard.html" (dict "page" . "featured" true) }}
+      {{ end }}
+      {{ range after 1 $allPages }}
+        {{ partial "pageCard.html" (dict "page" . "featured" false) }}
+      {{ end }}
     {{ end }}
   </div>
-  <aside class="aside"></aside>
+  <div class="aside"></div>
 </div>
 {{ end }}

@@ -18,6 +18,10 @@ themesDir = '../..'
     pageRef = '/projects'
     weight = 30
 
+[params.social]
+  github = 'https://github.com/example'
+  twitter = 'https://twitter.com/example'
+
 [markup]
   [markup.tableOfContents]
     startLevel = 1

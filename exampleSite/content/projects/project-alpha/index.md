@@ -2,7 +2,7 @@
 date = '2026-05-27T00:00:00Z'
 title = 'Project Alpha'
 subtitle = 'The first project with a subtitle'
-tags = ['demo', 'featured']
+tags = ['demo']
 +++
 
 Project Alpha is a demo project that includes a subtitle. This demonstrates how the page template renders the title and subtitle together.

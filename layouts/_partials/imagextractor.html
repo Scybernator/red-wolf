@@ -5,10 +5,10 @@
 2. The regex doesn't prioritize images that match the title of post
 
 Spec:
-1. If there is a featuredImage, return that one
+1. If there is a cardImage, return that one
   Should be a resource of the post, i.e. in the same directory
-    /featured.jpg
-    featured.jpg
+    /card.jpg
+    card.jpg
 2. If there is an image in the post folder (i.e. resource) that matches the post name, use that one
 3. If there are images inside the post, use the first one
 4. If there is an /assets/images/default.png/jpg/webp, use it, unless configuration is set to noDefaultImage -->
@@ -37,10 +37,10 @@ so this hack will have to do -->
     {{ end }}
 {{ end }}
 
-<!-- Check if the Markdown file contains a featured image in the front matter -->
+<!-- Check if the Markdown file contains a card image in the front matter -->
 {{ $pageResources :=  $page.Resources.ByType "image" }}
 {{ range $pageResources }}
-    {{ if eq .Name $page.Params.featuredImage }}
+    {{ if eq .Name $page.Params.cardImage }}
         {{ $image = .RelPermalink }}
     {{ end }} 
 {{ end }}
@@ -80,6 +80,6 @@ check settings flag  -->
   {{ $image = "/images/default.jpg" }}
 {{ end }}
 
-{{ $result := dict "url" $image "alt" $alt "featuredImage" $page.Params.featuredImage "pagePath" $pagePath}}
+{{ $result := dict "url" $image "alt" $alt "cardImage" $page.Params.cardImage "pagePath" $pagePath}}
 
 {{ return $result }}

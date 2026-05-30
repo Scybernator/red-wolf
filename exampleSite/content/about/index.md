@@ -18,7 +18,7 @@ The theme includes several notable features:
 ### Image extraction
 
 Images are automatically extracted from page bundles and content. The theme tries multiple strategies in priority order:
-1. `featuredImage` front-matter parameter
+1. `cardImage` front-matter parameter
 2. Page resource matching the URL base name
 3. First image resource in the bundle
 4. Remote image URL in content

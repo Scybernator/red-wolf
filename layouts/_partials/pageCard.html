@@ -1,15 +1,27 @@
-{{ $image := partial "imagextractor.html" . }}
-<!-- {{ $image }} -->
-<section class="page-card">
+{{ $page := .page }}
+{{ $featured := .featured | default false }}
+{{ $class := "page-card" }}
+{{ if $featured }}
+  {{ $class = "page-card featured" }}
+{{ end }}
+{{ $image := partial "imagextractor.html" $page }}
+<section class="{{ $class }}">
     <div>
-        <img src="{{ $image.url }}?v={{ now.Unix }}" alt="{{ $image.alt }}" class="page-card-img" /> 
+        <img src="{{ $image.url }}?v={{ now.Unix }}" alt="{{ $image.alt }}" class="page-card-img" />
     </div>
     <div>
         <h2>
-            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}
-                {{if .Params.subtitle }}: {{ .Params.subtitle }}{{ end }}
+            <a href="{{ $page.RelPermalink }}">{{ $page.LinkTitle }}
+                {{if $page.Params.subtitle }}: {{ $page.Params.subtitle }}{{ end }}
             </a>
         </h2>
-        {{ .Summary }}
+        {{ $page.Summary }}
+        {{ with $page.GetTerms "tags" }}
+        <div class="page-card-tags">
+            {{ range . }}
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            {{ end }}
+        </div>
+        {{ end }}
     </div>
 </section>

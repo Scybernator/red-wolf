@@ -1,1 +1,11 @@
-<p>Copyright {{ now.Year }}. All rights reserved.</p>
+{{ $social := site.Params.social }}
+<div>
+  <span>Copyright {{ now.Year }}. All rights reserved.</span>
+  {{ with $social }}
+  <span class="social-links">
+    {{ range $name, $url := . }}
+    <a href="{{ $url }}" target="_blank" rel="noopener">{{ $name | title }}</a>
+    {{ end }}
+  </span>
+  {{ end }}
+</div>

@@ -50,7 +50,7 @@ The theme expects these in `assets/images/`:
 ## Image extraction logic (`imagextractor.html`)
 
 Priority for a page's card image:
-1. `featuredImage` front-matter param matching a page resource name
+1. `cardImage` front-matter param matching a page resource name
 2. Page resource whose name matches the page's URL base
 3. First image resource in the page bundle
 4. Remote image URL found via regex in content

@@ -4,4 +4,4 @@ title = "Name Match Resource"
 tags = ["images", "reference"]
 +++
 
-This post demonstrates priority 2: no featuredImage, but a page resource whose name matches the post's URL base (name-match-resource.png).
+This post demonstrates priority 2: no cardImage, but a page resource whose name matches the post's URL base (name-match-resource.png).

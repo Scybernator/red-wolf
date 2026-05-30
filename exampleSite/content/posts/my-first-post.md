@@ -2,8 +2,10 @@
 date = '2026-05-27T00:00:00Z'
 title = 'My First Post'
 subtitle = 'A demo post for the theme'
+featured = true
 tags = ['demo', 'red-wolf']
 +++
+# A Demo Post For the Theme
 
 This is the content of the first post. It demonstrates the page layout with subtitle, date, tags, and table of contents.
 

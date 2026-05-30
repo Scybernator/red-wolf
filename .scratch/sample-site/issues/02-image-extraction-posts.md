@@ -8,9 +8,9 @@ Create 5 leaf-bundle posts under `exampleSite/content/posts/`, each demonstratin
 
 The 5 posts and their setup:
 
-1. **`using-featured-image/`** (priority 1) — front-matter sets `featuredImage: "hero-shot.png"`. Bundle includes `hero-shot.png`.
-2. **`name-match-resource/`** (priority 2) — no `featuredImage`. Bundle includes an image named `name-match-resource.png` matching the URL base.
-3. **`first-bundle-image/`** (priority 3) — no `featuredImage`, no name match. Bundle includes `photo-a.png` and `photo-b.png`; the first one should appear.
+1. **`using-card-image/`** (priority 1) — front-matter sets `cardImage: "hero-shot.png"`. Bundle includes `hero-shot.png`.
+2. **`name-match-resource/`** (priority 2) — no `cardImage`. Bundle includes an image named `name-match-resource.png` matching the URL base.
+3. **`first-bundle-image/`** (priority 3) — no `cardImage`, no name match. Bundle includes `photo-a.png` and `photo-b.png`; the first one should appear.
 4. **`remote-image-link/`** (priority 4) — no bundle resources. Body contains a markdown image linking to a remote URL (e.g. `https://picsum.photos/400/300`).
 5. **`fallback-image/`** (priority 5) — no images at all. Falls through to `default.jpg`.
 

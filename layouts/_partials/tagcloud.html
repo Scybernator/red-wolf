@@ -1,0 +1,5 @@
+<ul id="all-tags">
+  {{ range .Site.Taxonomies.tags.ByCount }}
+  <li><a href="{{ "tags/" | relLangURL }}{{ .Term | urlize }}">{{ .Term }} ({{ .Count }})</a></li>
+  {{ end }}
+</ul>

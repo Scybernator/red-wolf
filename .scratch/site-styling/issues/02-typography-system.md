@@ -1,4 +1,4 @@
-Status: ready-for-agent
+Status: closed
 
 ## What to build
 
@@ -8,10 +8,9 @@ The font stacks should be defined in a way that can be overridden by a site usin
 
 ## Acceptance criteria
 
-- [ ] Body text uses a system sans-serif stack (e.g. `system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`)
-- [ ] All headings (`h1`–`h6`) use `Georgia, "Times New Roman", serif`
-- [ ] Rationale comment in CSS (optional — "No external fonts; serif headings + sans body for hierarchy without dependencies")
-- [ ] Font stacks are defined via CSS custom properties (`--font-body`, `--font-heading`) for easy override
+- [x] Body text uses a system sans-serif stack (e.g. `system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`)
+- [x] All headings (`h1`–`h6`) use `Georgia, "Times New Roman", serif`
+- [x] Font stacks are defined via CSS custom properties (`--font-body`, `--font-heading`) for easy override
 
 ## Blocked by
 

@@ -1,4 +1,4 @@
-Status: ready-for-agent
+Status: closed
 
 ## What to build
 
@@ -24,12 +24,12 @@ Footer with copyright line and optional social links.
 
 ## Acceptance criteria
 
-- [ ] Footer shows "Copyright {current year}. All rights reserved."
-- [ ] Optional social links render when configured in `hugo.toml`
-- [ ] Footer renders only copyright when no social links configured
-- [ ] Social links open in new tab with `rel="noopener"`
-- [ ] Separator line uses theme CSS custom properties
-- [ ] Footer layout works on both mobile and desktop (full-width stack)
+- [x] Footer shows "Copyright {current year}. All rights reserved."
+- [x] Optional social links render when configured in `hugo.toml`
+- [x] Footer renders only copyright when no social links configured
+- [x] Social links open in new tab with `rel="noopener"`
+- [x] Separator line uses theme CSS custom properties
+- [x] Footer layout works on both mobile and desktop (full-width stack)
 
 ## Blocked by
 

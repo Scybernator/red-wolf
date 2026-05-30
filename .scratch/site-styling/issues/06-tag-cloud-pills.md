@@ -1,4 +1,4 @@
-Status: ready-for-agent
+Status: closed
 
 ## What to build
 
@@ -13,12 +13,12 @@ Each tag renders as a pill-shaped element:
 
 ## Acceptance criteria
 
-- [ ] Each tag renders as a rounded pill with background color
-- [ ] Tag link + count displayed inside the pill
-- [ ] "Tags:" heading retained above the list
-- [ ] Hover state for pills (e.g., background darkens or accent shifts)
-- [ ] Styled via CSS custom properties from `:root`
-- [ ] Works correctly inside the slide-in drawer on mobile
+- [x] Each tag renders as a rounded pill with background color
+- [x] Tag link + count displayed inside the pill
+- [x] "Tags:" heading retained above the list
+- [x] Hover state for pills (e.g., background darkens or accent shifts)
+- [x] Styled via CSS custom properties from `:root`
+- [x] Works correctly inside the slide-in drawer on mobile
 
 ## Blocked by
 
