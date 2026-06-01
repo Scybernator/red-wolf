@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="page">
+<div class="page"{{ if or site.Params.disableFloatingFootnotes .Params.disableFloatingFootnotes }} data-floating-footnotes="disabled"{{ end }}>
   <nav class="nav">{{ .TableOfContents }}</nav>
   <div class="content" style="display:block">
     <h1>{{ .Title }}{{if .Params.subtitle }}: {{ .Params.subtitle }}{{ end }}</h1>
@@ -11,6 +11,6 @@
     {{ .Content }}
     {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
   </div>
-  <aside class="aside">notes goes here</aside>
+  <aside class="aside"></aside>
 </div>
 {{ end }}

@@ -94,3 +94,10 @@ Defined via CSS custom properties in `assets/css/main.css:7`.
 - **Term page**: simple pagination of all `.Pages`, no featured split or first-page treatment.
 - **Controls**: numbered pill buttons with prev/next arrows, styled in the earthy palette. Absent when total pages ≤ 1.
   - Empty asides on `.home` and `.term` to be removed when implementation begins.
+
+## Floating footnotes
+
+- On `.page` layouts, Hugo's markdown footnotes (`<div class="footnotes">`) are moved from `.content` to `.aside` via JavaScript on page load.
+- At window widths ≥ 768px, each footnote `<li>` is positioned absolutely within the aside column, aligned vertically beside its in-text reference. A `ResizeObserver` on `.content` recalculates positions on dimension changes.
+- Below 768px, footnotes render in normal flow within the aside (which stacks below `.content` on mobile).
+- **Opt-out**: `disableFloatingFootnotes: true` in `hugo.toml` `[params]` (site-wide) or in page front matter (per-page). Enabled by default.

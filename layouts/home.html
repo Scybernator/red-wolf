@@ -15,7 +15,7 @@
     {{ end }}
     {{ $paginator := .Paginate $paginatePages }}
     {{ if eq $paginator.PageNumber 1 }}
-    <div class="content hero">
+    <div class="hero">
       {{ $about := site.GetPage "/about" }}{{ with $about }}<a href="{{ .RelPermalink }}" style="text-decoration: none; color: inherit;">{{ end }}
       <div style="display: flex; align-items: center;">
         {{ $image := resources.GetMatch "images/hero.png" }}

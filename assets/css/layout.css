@@ -11,9 +11,8 @@ body {
 .home {
     display: grid;
     grid-template-areas:
-        "nav content aside"
         "nav posts aside";
-    grid-template-rows: auto auto;
+    grid-template-rows: auto;
     grid-template-columns: 1fr 5fr 1fr;
 }
 
@@ -59,4 +58,8 @@ body {
 
 .posts {
     grid-area: posts;
+}
+
+.hero {
+    grid-area: hero;
 }

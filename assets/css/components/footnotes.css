@@ -1,0 +1,26 @@
+.aside {
+  position: relative;
+}
+
+.floating-footnotes {
+  font-size: 85%;
+}
+
+.floating-footnotes hr {
+  display: none;
+}
+
+.floating-footnotes .footnote-backref {
+  display: none;
+}
+
+.floating-footnotes ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.floating-footnotes .fn-num {
+  font-weight: 600;
+  color: var(--color-accent);
+}

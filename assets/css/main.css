@@ -2,6 +2,7 @@
 @import "components/footer.css";
 @import "components/pagination.css";
 @import "components/tagcloud.css";
+@import "components/footnotes.css";
 @import "layout.css";
 
 :root {

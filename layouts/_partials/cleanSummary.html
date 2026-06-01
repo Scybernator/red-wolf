@@ -1,7 +1,8 @@
 {{ $max := site.Params.summaryMaxLength | default 300 }}
-{{ $s := .Summary | replaceRE `<img[^>]*>` "" | replaceRE `<figure[^>]*>` "" | replaceRE `</figure>` "" | replaceRE `<figcaption[^>]*>\s*<p>[\s\S]*?</p>` "" | replaceRE `</figcaption>` "" | replaceRE `<table[^>]*>[\s\S]*?</table>` "" }}
+{{- /* plainify avoids broken HTML from mid-tag truncation (e.g. <sup><a href="#fn:1"…), which caused subsequent DOM nodes to be swallowed, breaking the page layout but breaks formatting for text elements, which is a bummer*/}}
+{{ $s := .Summary | replaceRE `<img[^>]*>` "" | replaceRE `<figure[^>]*>` "" | replaceRE `</figure>` "" | replaceRE `<figcaption[^>]*>\s*<p>[\s\S]*?</p>` "" | replaceRE `</figcaption>` "" | replaceRE `<table[^>]*>[\s\S]*?</table>` "" | plainify }}
 {{ if gt (len $s) $max }}
 {{ $s = substr $s 0 $max }}
 {{ $s = printf "%s…" (strings.TrimRight " .,;:!?" $s) }}
 {{ end }}
-{{ return ($s | safeHTML) }}
+{{ return (printf "<p>%s</p>" $s | safeHTML) }}
