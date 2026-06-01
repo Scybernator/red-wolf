@@ -4,10 +4,16 @@ footer {
   padding-inline: var(--space-sm);
 }
 
+footer > div {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
 .social-links {
   display: flex;
-  gap: var(--space-md);
-  margin-top: var(--space-xs);
+  gap: var(--space-sm);
 }
 
 .social-links a {

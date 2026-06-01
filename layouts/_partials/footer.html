@@ -8,4 +8,7 @@
     {{ end }}
   </span>
   {{ end }}
+  {{ with site.Home.AlternativeOutputFormats.Get "rss" }}
+  <a href="{{ .RelPermalink }}" target="_blank" rel="noopener">RSS</a>
+  {{ end }}
 </div>
