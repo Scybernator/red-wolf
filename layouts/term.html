@@ -6,24 +6,11 @@
   <div class="posts">
     <h1>{{ .Title }}</h1>
     {{ .Content }}
-    {{ $allPages := sort .Pages "Date" "desc" }}
-    {{ $featuredPages := where $allPages "Params.featured" true }}
-    {{ if $featuredPages }}
-      {{ range $featuredPages }}
-        {{ partial "pageCard.html" (dict "page" . "featured" true) }}
-      {{ end }}
-      {{ $nonFeatured := where $allPages "Params.featured" "ne" true }}
-      {{ range $nonFeatured }}
-        {{ partial "pageCard.html" (dict "page" . "featured" false) }}
-      {{ end }}
-    {{ else }}
-      {{ with index $allPages 0 }}
-        {{ partial "pageCard.html" (dict "page" . "featured" true) }}
-      {{ end }}
-      {{ range after 1 $allPages }}
-        {{ partial "pageCard.html" (dict "page" . "featured" false) }}
-      {{ end }}
+    {{ $paginator := .Paginate (sort .Pages "Date" "desc") }}
+    {{ range $paginator.Pages }}
+      {{ partial "pageCard.html" (dict "page" . "featured" false) }}
     {{ end }}
+    {{ partial "pagination.html" $paginator }}
   </div>
 </div>
 {{ end }}

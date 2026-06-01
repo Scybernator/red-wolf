@@ -4,6 +4,7 @@ MeRead.md
 # Hugo build artifacts
 public/
 exampleSite/public/
+exampleSite/.hugo-test
 exampleSiteBuild/
 resources/
 *.hugo_build.lock

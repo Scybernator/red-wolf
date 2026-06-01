@@ -3,6 +3,8 @@ locale = 'en-US'
 title = 'Red Wolf Demo'
 theme = 'red-wolf'
 themesDir = '../..'
+[pagination]
+  pagerSize = 5
 
 [menus]
   [[menus.main]]

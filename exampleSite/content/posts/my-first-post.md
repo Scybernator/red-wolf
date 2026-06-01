@@ -7,7 +7,7 @@ tags = ['demo', 'red-wolf']
 +++
 # A Demo Post For the Theme
 
-This is the content of the first post. It demonstrates the page layout with subtitle, date, tags, and table of contents.
+This is the **content** of the first post. It demonstrates the page layout with subtitle, date, tags, and table of contents.
 
 ## Section One
 

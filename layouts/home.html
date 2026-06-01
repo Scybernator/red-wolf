@@ -3,35 +3,38 @@
   <nav class="nav">
     {{ partial "tagcloud.html" . }}
   </nav>
-  <div class="content hero">
-    <div style="display: flex; align-items: center;">
-      {{ $image := resources.GetMatch "images/hero.png" }}
-      {{ $mask := images.Mask (resources.Get "images/circle_mask.png") }}
-      {{ with $image | images.Filter $mask}}
-      <img src="{{ .RelPermalink }}" style="margin:8px;">
-      {{ end }}
-      {{ .Content }}
-    </div>
-  </div>
   <div class="posts">
     {{ $allPages := sort site.RegularPages "Date" "desc" }}
     {{ $featuredPages := where $allPages "Params.featured" true }}
+    {{ $paginatePages := $allPages }}
     {{ if $featuredPages }}
+      {{ $paginatePages = where $allPages "Params.featured" "ne" true }}
+    {{ else }}
+      {{ $featuredPages = first 1 $allPages }}
+      {{ $paginatePages = after 1 $allPages }}
+    {{ end }}
+    {{ $paginator := .Paginate $paginatePages }}
+    {{ if eq $paginator.PageNumber 1 }}
+    <div class="content hero">
+      <div style="display: flex; align-items: center;">
+        {{ $image := resources.GetMatch "images/hero.png" }}
+        {{ $mask := images.Mask (resources.Get "images/circle_mask.png") }}
+        {{ with $image | images.Filter $mask}}
+        <img src="{{ .RelPermalink }}" style="margin:8px;">
+        {{ end }}
+        {{ .Content }}
+      </div>
+    </div>
+    {{ end }}
+    {{ if eq $paginator.PageNumber 1 }}
       {{ range $featuredPages }}
         {{ partial "pageCard.html" (dict "page" . "featured" true) }}
       {{ end }}
-      {{ $nonFeatured := where $allPages "Params.featured" "ne" true }}
-      {{ range $nonFeatured }}
-        {{ partial "pageCard.html" (dict "page" . "featured" false) }}
-      {{ end }}
-    {{ else }}
-      {{ with index $allPages 0 }}
-        {{ partial "pageCard.html" (dict "page" . "featured" true) }}
-      {{ end }}
-      {{ range after 1 $allPages }}
-        {{ partial "pageCard.html" (dict "page" . "featured" false) }}
-      {{ end }}
     {{ end }}
+    {{ range $paginator.Pages }}
+      {{ partial "pageCard.html" (dict "page" . "featured" false) }}
+    {{ end }}
+    {{ partial "pagination.html" $paginator }}
   </div>
   <div class="aside"></div>
 </div>

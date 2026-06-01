@@ -2,6 +2,9 @@ baseURL = 'https://example.org/'
 locale = 'en-US'
 title = 'Site Title'
 
+[pagination]
+  pagerSize = 10
+
 [menus]
   [[menus.main]]
     name = 'Home'
@@ -13,7 +16,9 @@ title = 'Site Title'
     extended = false
     min = '0.146.0'
 
-# why doesn't this work at the theme level?
+[params]
+  summaryMaxLength = 300
+
 [markup]
   [markup.tableOfContents]
     startLevel = 1

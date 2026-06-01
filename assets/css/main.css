@@ -1,5 +1,7 @@
 @import "components/header.css";
 @import "components/footer.css";
+@import "components/pagination.css";
+@import "components/tagcloud.css";
 @import "layout.css";
 
 :root {
@@ -21,6 +23,7 @@
 
   --color-bg: var(--lime-cream);
   --color-accent: var(--green);
+  --color-accent-dark: var(var(--evergreen))
   --color-accent-secondary: var(--light-gold);
   --color-header:var(--dark-spruce);
   --color-border: var(--ash-grey);
@@ -109,31 +112,6 @@ blockquote {
   background: var(--color-surface);
   border-left: 5px solid var(--color-border);
   padding: 3px 1em 3px;
-}
-
-/* ---- #06 Tag cloud pills ---- */
-#all-tags {
-  list-style: none;
-  padding: 0;
-  display: inline-flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-}
-
-#all-tags li a {
-  display: block;
-  color: white;
-  background: var(--color-link);
-  border: 1px solid var(--color-accent);
-  border-radius: 999px;
-  padding: 0.2em 0.8em;
-  font-size: 0.9em;
-  transition: background 0.2s;
-}
-
-#all-tags li a:hover {
-  background: var(--color-link-hover);
-  color: white;
 }
 
 /* ---- #04 Featured page cards ---- */

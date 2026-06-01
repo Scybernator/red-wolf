@@ -85,4 +85,12 @@ Defined via CSS custom properties in `assets/css/main.css:7`.
 - Featured cards: larger image, taller, visually prominent.
 - Non-featured cards: standard size, indented relative to the hero to let the hero stand out.
 - First-card yellow badge removed.
+
+## Pagination
+
+- Both home page and tag term pages are paginated.
+- **Per-page count**: theme default 10, overridable by site config via `[pagination] pagerSize`.
+- **Home page**: featured cards (and the auto-feature fallback) appear only on page 1. Hero content (`.Content` from `_index.md` + hero image) also only on page 1. Tag cloud nav persists on all pages.
+- **Term page**: simple pagination of all `.Pages`, no featured split or first-page treatment.
+- **Controls**: numbered pill buttons with prev/next arrows, styled in the earthy palette. Absent when total pages ≤ 1.
   - Empty asides on `.home` and `.term` to be removed when implementation begins.

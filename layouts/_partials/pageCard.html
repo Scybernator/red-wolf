@@ -15,7 +15,7 @@
                 {{if $page.Params.subtitle }}: {{ $page.Params.subtitle }}{{ end }}
             </a>
         </h2>
-        {{ $page.Summary }}
+        {{ partial "cleanSummary.html" $page }}
         {{ with $page.GetTerms "tags" }}
         <div class="page-card-tags">
             {{ range . }}
