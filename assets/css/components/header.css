@@ -3,6 +3,8 @@ header {
   color: #FFFFFF;
   position: relative;
   padding-inline: var(--space-sm);
+  display: flex;
+  align-items: center;
 }
 
 header::after {
@@ -19,6 +21,8 @@ header::after {
 
 header .site-title {
   color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
 }
 
 header #hamburger {
