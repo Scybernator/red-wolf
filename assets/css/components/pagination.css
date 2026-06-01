@@ -31,7 +31,8 @@
   color: white;
 }
 
-.pagination__page--active {
+.pagination__page--active,
+.pagination__page--active:hover {
   background: var(--color-link-hover);
   color: var(--color-accent-dark);
   font-weight: bold;
