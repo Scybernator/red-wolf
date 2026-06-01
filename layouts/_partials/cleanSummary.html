@@ -1,7 +1,7 @@
 {{ $max := site.Params.summaryMaxLength | default 300 }}
-{{ $s := .Summary | replaceRE "<img[^>]*>" "" | replaceRE "(?s)<table[^>]*>.*?</table>" "" }}
+{{ $s := .Summary | replaceRE `<img[^>]*>` "" | replaceRE `<figure[^>]*>` "" | replaceRE `</figure>` "" | replaceRE `<figcaption[^>]*>\s*<p>[\s\S]*?</p>` "" | replaceRE `</figcaption>` "" | replaceRE `<table[^>]*>[\s\S]*?</table>` "" }}
 {{ if gt (len $s) $max }}
-  {{ $s = substr $s 0 $max }}
-  {{ $s = printf "%s…" (strings.TrimRight " .,;:!?" $s) }}
+{{ $s = substr $s 0 $max }}
+{{ $s = printf "%s…" (strings.TrimRight " .,;:!?" $s) }}
 {{ end }}
 {{ return ($s | safeHTML) }}
