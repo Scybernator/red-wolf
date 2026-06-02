@@ -38,6 +38,7 @@ body {
 
 .nav {
     grid-area: nav;
+    padding-right: 5px;
 }
 
 .main {
