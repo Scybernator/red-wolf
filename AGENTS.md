@@ -58,7 +58,7 @@ Priority for a page's card image:
 
 ## Notable quirks
 
-- **`.gitignore` excludes `MeRead.md`** — Ignore this file, just a scratchpad for the author.
+- **`.gitignore` excludes `MeRead.md`** — Ignore this file, just a scratchpad for the author. Do not examine it's content when searching for information.
 - **ToC `startLevel = 1` in `hugo.toml`** — author notes this may not work at theme level; may need to be set in site's `hugo.toml`
 - **`home.html`**: Uses `site.RegularPages` directly (no pagination yet — noted in `MeRead.md`)
 - **Archetype**: `archetypes/default.md` creates draft pages
