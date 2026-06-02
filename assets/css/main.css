@@ -4,6 +4,7 @@
 @import "components/tagcloud.css";
 @import "components/footnotes.css";
 @import "components/lightbox.css";
+@import "components/draft-badge.css";
 @import "layout.css";
 
 :root {
@@ -25,9 +26,9 @@
 
   --color-bg: var(--lime-cream);
   --color-accent: var(--green);
-  --color-accent-dark: var(var(--evergreen))
+  --color-accent-dark: var(var(--evergreen));
   --color-accent-secondary: var(--light-gold);
-  --color-header:var(--dark-spruce);
+  --color-header: var(--dark-spruce);
   --color-border: var(--ash-grey);
   --color-link: var(--sand);
   --color-link-hover: var(--forest-green);
@@ -58,7 +59,12 @@ body {
   background-color: var(--color-bg);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
 }
 
@@ -122,7 +128,7 @@ blockquote {
   border-color: var(--color-accent); */
 }
 
-.page-card:first-child .page-card-img{
+.page-card:first-child .page-card-img {
   max-width: 300px;
   max-height: 300px;
 }

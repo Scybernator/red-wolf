@@ -95,6 +95,14 @@ Defined via CSS custom properties in `assets/css/main.css:7`.
 - **Controls**: numbered pill buttons with prev/next arrows, styled in the earthy palette. Absent when total pages ≤ 1.
   - Empty asides on `.home` and `.term` to be removed when implementation begins.
 
+## Draft badge
+
+- Shown on page cards (`home.html`, `term.html`) and on the single page view (`page.html`) when the page's front matter has `draft: true`.
+- **Position**: absolute, top-left corner of the card image (cards) / `.content` area (page view).
+- **Visual**: pill-shaped (`border-radius: 999px`), amber/gold background, dark text, uppercase "DRAFT", small font (`0.75em`), bold weight.
+- **Implementation**: `assets/css/components/draft-badge.css`. Check is via Hugo's built-in `.Draft` property.
+- **No effect in production** — Hugo excludes draft pages from `site.RegularPages` by default, so the badge only ever appears in dev mode (`hugo server -D`).
+
 ## Image lightbox
 
 - On `.page` layouts, images rendered via markdown (`{{ .Content }}`) are clickable to open in a full-viewport lightbox overlay.

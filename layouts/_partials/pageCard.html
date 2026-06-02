@@ -6,7 +6,8 @@
 {{ end }}
 {{ $image := partial "imagextractor.html" $page }}
 <section class="{{ $class }}">
-    <div>
+    {{ if $page.Draft }}<span class="draft-badge">DRAFT</span>{{ end }}
+    <div class="page-card-img-wrapper">
         <img src="{{ $image.url }}?v={{ now.Unix }}" alt="{{ $image.alt }}" class="page-card-img" />
     </div>
     <div>
