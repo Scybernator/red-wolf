@@ -34,7 +34,7 @@ Defined via CSS custom properties in `assets/css/main.css:7`.
 
 ### Link styling
 
-- No color or underline decoration. Only `cursor: pointer` signals clickability.
+- No color or underline decoration. Only `cursor: pointer` signals clickability (applies to links only; other interactive elements may use different cursors).
 
 ## Typography
 
@@ -94,6 +94,23 @@ Defined via CSS custom properties in `assets/css/main.css:7`.
 - **Term page**: simple pagination of all `.Pages`, no featured split or first-page treatment.
 - **Controls**: numbered pill buttons with prev/next arrows, styled in the earthy palette. Absent when total pages ≤ 1.
   - Empty asides on `.home` and `.term` to be removed when implementation begins.
+
+## Image lightbox
+
+- On `.page` layouts, images rendered via markdown (`{{ .Content }}`) are clickable to open in a full-viewport lightbox overlay.
+- **Trigger**: click the image. Images already wrapped in a link (`<a>` around `<img>`) are excluded — the link takes priority.
+- **Display**: the image is contained within the viewport (`max-width`/`max-height` with padding), centered, preserving aspect ratio.
+- **Caption**: the image's `alt` text is shown as a caption below the image within the lightbox. Omitted if no alt text exists.
+- **Accessibility**: overlay uses `role="dialog"` and `aria-modal="true"`. Close button has `aria-label="Close image"`.
+- **Body scroll**: locked (`overflow: hidden`) while lightbox is open.
+- **Transition**: fade in/out, ~200ms.
+- **Dismiss**: click backdrop, click image, press Escape, or click the close (X) button. All four work.
+- **Backdrop**: semi-transparent dark overlay (`rgba(0,0,0,0.8)`). Close button: top-right, white X, CSS-drawn (no icon font).
+- **Implementation**: lightbox overlay injected by JavaScript at runtime. JS logic lives in a self-contained module within `assets/js/main.js`. CSS added in a new `assets/css/components/lightbox.css` component file.
+- **Hover**: `cursor: zoom-in` + `opacity: 0.85` on hover with a CSS transition.
+- **Gallery**: none — each image opens independently. No prev/next navigation.
+- **Responsive**: same behavior on mobile and desktop. Close button has ≥44px touch target on mobile.
+- **Scope**: `page.html` only (not home, term, etc.).
 
 ## Floating footnotes
 

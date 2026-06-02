@@ -3,6 +3,7 @@
 @import "components/pagination.css";
 @import "components/tagcloud.css";
 @import "components/footnotes.css";
+@import "components/lightbox.css";
 @import "layout.css";
 
 :root {

@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="page"{{ if or site.Params.disableFloatingFootnotes .Params.disableFloatingFootnotes }} data-floating-footnotes="disabled"{{ end }}>
+<div class="page"{{ if or site.Params.disableImageLightbox .Params.disableImageLightbox }} data-disable-image-lightbox="true"{{ end }}{{ if or site.Params.disableFloatingFootnotes .Params.disableFloatingFootnotes }} data-floating-footnotes="disabled"{{ end }}>
   <nav class="nav">{{ .TableOfContents }}</nav>
   <div class="content" style="display:block">
     <h1>{{ .Title }}{{if .Params.subtitle }}: {{ .Params.subtitle }}{{ end }}</h1>
