@@ -26,7 +26,7 @@ A Hugo theme with a green-on-cream aesthetic, circular-masked hero/logo images, 
 Add the theme as a git submodule:
 
 ```shell
-git submodule add https://github.com/your-org/red-wolf.git themes/red-wolf
+git submodule add https://github.com/scybernator/red-wolf.git themes/red-wolf
 ```
 
 Then set `theme = 'red-wolf'` in your site's `hugo.toml`.
