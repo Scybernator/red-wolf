@@ -1,3 +1,20 @@
 {{ define "main" }}
-
+<div class="term">
+    <nav class="nav">
+        {{ partial "tagcloud.html" . }}
+    </nav>
+    <div class="posts">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+        {{ range .Data.Terms.ByCount }}
+        <section class="page-card">
+            <div>
+                <h2><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a></h2>
+                <p>{{ .Count }} {{ i18n "pages" (default "pages" (printf "%d" .Count)) }}</p>
+            </div>
+        </section>
+        {{ end }}
+    </div>
+    <div class="aside"></div>
+</div>
 {{ end }}

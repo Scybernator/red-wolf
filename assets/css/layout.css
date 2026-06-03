@@ -31,7 +31,7 @@ body {
 .term {
     display: grid;
     grid-template-areas:
-        "nav posts";
+        "nav posts aside";
     grid-template-rows: auto;
     grid-template-columns: 2.4fr 5fr 2.4fr;
 }
@@ -67,4 +67,8 @@ body {
 
 .hero {
     grid-area: hero;
+}
+
+.term {
+    grid-area: term;
 }

@@ -1,17 +1,25 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-<div class="content">
-  {{ .Content }}
-</div>
-<div class="pages">
-  {{ range .Pages }}
-  <section>
-    <h2>
-      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-      {{ .Params.subtitle }}
-    </h2>
-    {{ .Summary }}
-  </section>
-  {{ end }}
+<div class="term">
+  <div class="nav">
+    {{ partial "tagcloud.html" . }}
+  </div>
+  <div class="posts">
+    <h1>{{ .Title }}</h1>
+    <div class="content">
+      {{ .Content }}
+    </div>
+    <div class="pages">
+      {{ range .Pages }}
+      <section>
+        <h2>
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+          {{ .Params.subtitle }}
+        </h2>
+        {{ .Summary }}
+      </section>
+      {{ end }}
+    </div>
+  </div>
+  <div class="aside"></div>
 </div>
 {{ end }}
