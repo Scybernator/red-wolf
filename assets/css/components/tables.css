@@ -1,0 +1,54 @@
+.content table,
+.posts table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-block: var(--space-md);
+  font-size: 0.95em;
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.content th,
+.posts th {
+  background: var(--color-header);
+  color: var(--color-surface);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.6em 0.8em;
+}
+
+.content td,
+.posts td {
+  padding: 0.5em 0.8em;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.content tbody tr:nth-child(even),
+.posts tbody tr:nth-child(even) {
+  background: var(--color-surface);
+}
+
+.content tbody tr:nth-child(odd),
+.posts tbody tr:nth-child(odd) {
+  background: var(--color-bg);
+}
+
+.content tbody tr:hover,
+.posts tbody tr:hover {
+  background: var(--pale-amber);
+}
+
+.content table code,
+.posts table code {
+  font-size: 0.85em;
+}
+
+@media (max-width: 767px) {
+  .content table,
+  .posts table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
