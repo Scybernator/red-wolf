@@ -8,7 +8,7 @@
 
 .hero-inner {
   padding: 6px;
-  display: inline-block;
+  display: flow-root;
 }
 
 .hero-inner img {
