@@ -21,7 +21,7 @@ body {
 
 .page {
     display: grid;
-    grid-template-areas: "content";
+    grid-template-areas: "content" "aside";
     grid-template-columns: 1fr;
 }
 

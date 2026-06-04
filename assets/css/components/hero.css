@@ -8,10 +8,11 @@
 
 .hero-inner {
   padding: 6px;
+  display: inline-block;
 }
 
 .hero-inner img {
-  max-width: 250px;
+  max-height: 250px;
 }
 
 .hero-inner p {
@@ -25,6 +26,6 @@
 
 @media (max-width: 767px) {
   .hero-inner img {
-    max-width: 160px;
+    max-height: 160px;
   }
 }
