@@ -107,6 +107,11 @@
       overlay.addEventListener('click', closeDrawer);
     }
 
+    var closeBtn = document.getElementById('drawer-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeDrawer);
+    }
+
     if (drawer) {
       drawer.addEventListener('click', function (e) {
         if (e.target.tagName === 'A') {

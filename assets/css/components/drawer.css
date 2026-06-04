@@ -1,0 +1,59 @@
+#drawer {
+  position: fixed;
+  top: 0;
+  right: -344px;
+  width: 280px;
+  height: 100vh;
+  background: var(--color-bg);
+  border-left: 1px solid var(--color-border);
+  z-index: 1000;
+  transition: right 0.3s ease;
+  padding: var(--space-md);
+  overflow-y: auto;
+}
+
+#drawer.open {
+  right: 0;
+}
+
+#drawer-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+#drawer-overlay.open {
+  display: block;
+}
+
+#drawer-close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text);
+  padding: 0;
+  line-height: 1;
+  min-width: 44px;
+  min-height: 44px;
+  z-index: 1;
+}
+
+#drawer a {
+  display: block;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  #drawer,
+  #drawer-overlay {
+    display: none;
+  }
+}
