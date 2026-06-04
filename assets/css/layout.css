@@ -35,7 +35,7 @@ body {
 @media (min-width: 768px) {
     .home {
         grid-template-areas: "nav posts";
-        grid-template-columns: 1fr 5fr;
+        grid-template-columns: 0.7fr 5fr;
     }
 
     .term {
