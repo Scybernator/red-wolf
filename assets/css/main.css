@@ -181,7 +181,7 @@ blockquote {
   min-height: 44px;
 }
 
-/* ── xs/sm (<768px): hamburger & drawer ── */
+/* ── xs/sm (<768px): hamburger, drawer, stacked cards ── */
 @media (max-width: 767px) {
   header {
     position: sticky;
@@ -195,6 +195,28 @@ blockquote {
 
   .nav {
     display: none;
+  }
+
+  .page-card {
+    flex-direction: column;
+    margin-left: 10px;
+  }
+
+  .page-card-img {
+    max-width: 100%;
+    padding-right: 0;
+    margin-bottom: 8px;
+  }
+
+  .page-card:first-child .page-card-img {
+    max-width: 100%;
+  }
+}
+
+/* ── md+ (≥768px): tighter card margin ── */
+@media (min-width: 768px) {
+  .page-card {
+    margin-left: var(--space-sm);
   }
 }
 

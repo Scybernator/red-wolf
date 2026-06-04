@@ -7,15 +7,15 @@
 {{ $image := partial "imagextractor.html" $page }}
 <section class="{{ $class }}">
     {{ if $page.Draft }}<span class="draft-badge">DRAFT</span>{{ end }}
-    <div class="page-card-img-wrapper">
-        <img src="{{ $image.url }}?v={{ now.Unix }}" alt="{{ $image.alt }}" class="page-card-img" />
-    </div>
+    <h2>
+        <a href="{{ $page.RelPermalink }}">{{ $page.LinkTitle }}
+            {{if $page.Params.subtitle }}: {{ $page.Params.subtitle }}{{ end }}
+        </a>
+    </h2>
     <div>
-        <h2>
-            <a href="{{ $page.RelPermalink }}">{{ $page.LinkTitle }}
-                {{if $page.Params.subtitle }}: {{ $page.Params.subtitle }}{{ end }}
-            </a>
-        </h2>
+        <div class="page-card-img-wrapper">
+            <img src="{{ $image.url }}?v={{ now.Unix }}" alt="{{ $image.alt }}" class="page-card-img" />
+        </div>
         {{ partial "cleanSummary.html" $page }}
         {{ with $page.GetTerms "tags" }}
         <div class="page-card-tags">
