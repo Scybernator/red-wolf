@@ -7,6 +7,8 @@
 @import "components/draft-badge.css";
 @import "components/tables.css";
 @import "components/drawer.css";
+@import "components/hero.css";
+@import "components/page-card.css";
 @import "layout.css";
 
 :root {
@@ -93,47 +95,6 @@ main {
   font-size: clamp(2rem, 10vh, 4rem);
 }
 
-.hero {
-  border-left: thin solid var(--color-accent);
-  border-bottom: thin solid var(--color-accent);
-  border-radius: 50px;
-  box-shadow: var(--shadow-md);
-  font-size: clamp(1.2rem, 4vw, 1.5rem);
-}
-
-.hero-inner {
-  padding: 6px;
-}
-
-.hero-inner img {
-  max-width: 250px;
-}
-
-.hero-inner p {
-  text-indent: 2em;
-}
-
-.image-left {
-  float: left;
-  margin-right: 15px;
-}
-
-.page-card {
-  display: flex;
-  padding: 12px;
-  margin: 10px;
-  margin-left: 35px;
-  border: thin solid var(--color-accent);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-}
-
-.page-card-img {
-  max-width: 215px;
-  max-height: 215px;
-  padding-right: 8px;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -153,37 +114,6 @@ blockquote {
   padding: 3px 1em 3px;
 }
 
-/* ---- #04 Featured page cards ---- */
-.page-card .first-child {
-  /* border-width: 2px;
-  border-color: var(--color-accent); */
-}
-
-.page-card:first-child .page-card-img {
-  max-width: 300px;
-  max-height: 300px;
-}
-
-.page-card.first-child h2 {
-  font-size: 1.4em;
-}
-
-.page-card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3em;
-  margin-top: var(--space-xs);
-}
-
-.page-card-tags a {
-  font-size: 0.8em;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  padding: 0.1em 0.6em;
-  color: var(--color-accent);
-}
-
 /* ---- #03 Hamburger ---- */
 #hamburger {
   display: none;
@@ -198,7 +128,7 @@ blockquote {
   min-height: 44px;
 }
 
-/* ── xs/sm (<768px): hamburger, drawer, stacked cards ── */
+/* ── xs/sm (<768px): hamburger, drawer ── */
 @media (max-width: 767px) {
   header {
     position: sticky;
@@ -212,32 +142,6 @@ blockquote {
 
   .nav {
     display: none;
-  }
-
-  .page-card {
-    flex-direction: column;
-    margin-left: 10px;
-  }
-
-  .page-card-img {
-    max-width: 100%;
-    padding-right: 0;
-    margin-bottom: 8px;
-  }
-
-  .page-card:first-child .page-card-img {
-    max-width: 100%;
-  }
-
-  .hero-inner img {
-    max-width: 160px;
-  }
-}
-
-/* ── md+ (≥768px): tighter card margin ── */
-@media (min-width: 768px) {
-  .page-card {
-    margin-left: var(--space-sm);
   }
 }
 

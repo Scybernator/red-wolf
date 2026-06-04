@@ -1,0 +1,30 @@
+.hero {
+  border-left: thin solid var(--color-accent);
+  border-bottom: thin solid var(--color-accent);
+  border-radius: 50px;
+  box-shadow: var(--shadow-md);
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+}
+
+.hero-inner {
+  padding: 6px;
+}
+
+.hero-inner img {
+  max-width: 250px;
+}
+
+.hero-inner p {
+  text-indent: 2em;
+}
+
+.image-left {
+  float: left;
+  margin-right: 15px;
+}
+
+@media (max-width: 767px) {
+  .hero-inner img {
+    max-width: 160px;
+  }
+}
