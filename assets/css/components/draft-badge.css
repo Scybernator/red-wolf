@@ -1,24 +1,15 @@
-.page-card {
-  position: relative;
-}
-
-.page .content {
-  position: relative;
-}
-
 .draft-badge {
-  position: absolute;
-  top: 0.2rem;
-  left: -2rem;
+  display: inline-block;
+  vertical-align: middle;
   background: var(--pale-amber);
   color: var(--color-text);
-  border-color: black;
-  border-style: solid;
+  border: 2px solid black;
   border-radius: 999px;
-  padding: 0.15em 0.6em;
-  font-size: 1em;
+  padding: 0.05em 0.5em;
+  margin-right: 0.35em;
+  font-size: 0.65em;
   font-weight: 800;
   text-transform: uppercase;
   line-height: 1.4;
-  z-index: 1;
+  font-family: sans-serif;
 }
