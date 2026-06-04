@@ -1,14 +1,16 @@
 {{ $social := site.Params.social }}
-<div>
-  <span>Copyright {{ now.Year }}. All rights reserved.</span>
-  {{ with $social }}
-  <span class="social-links">
-    {{ range $name, $url := . }}
-    <a href="{{ $url }}" target="_blank" rel="noopener">{{ $name | title }}</a>
+<footer class="footer">
+  <div>
+    <span>Copyright {{ now.Year }}. All rights reserved.</span>
+    {{ with $social }}
+    <span class="social-links">
+      {{ range $name, $url := . }}
+      <a href="{{ $url }}" target="_blank" rel="noopener">{{ $name | title }}</a>
+      {{ end }}
+    </span>
     {{ end }}
-  </span>
-  {{ end }}
-  {{ with site.Home.AlternativeOutputFormats.Get "rss" }}
-  <a href="{{ .RelPermalink }}" target="_blank" rel="noopener">RSS</a>
-  {{ end }}
-</div>
+    {{ with site.Home.AlternativeOutputFormats.Get "rss" }}
+    <a href="{{ .RelPermalink }}" target="_blank" rel="noopener">RSS</a>
+    {{ end }}
+  </div>
+</footer>

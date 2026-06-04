@@ -23,6 +23,23 @@ header .site-title {
   color: #FFFFFF;
   display: inline-flex;
   align-items: center;
+  font-size: clamp(1rem, 10vh, 4rem);
+}
+
+header .site-logo {
+  width:100px;
+  margin:8px;
+}
+
+@media (max-width: 767px) {
+  header .site-title {
+    font-size: clamp(1rem, 6vw, 2rem);
+  }
+
+  header .site-logo {
+    width:70px;
+    margin:8px;
+  }
 }
 
 header #hamburger {
