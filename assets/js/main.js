@@ -125,7 +125,7 @@
         aside.textContent = '';
         aside.appendChild(footnoteSection);
 
-        var FOOTNOTE_MIN_WIDTH = 768;
+        var FOOTNOTE_MIN_WIDTH = 992;
         var footnoteItems = footnoteSection.querySelectorAll('li[id^="fn:"]');
         Array.prototype.forEach.call(footnoteItems, function (fn) {
           var num = fn.id.replace('fn:', '');

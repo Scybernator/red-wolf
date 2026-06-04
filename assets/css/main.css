@@ -75,6 +75,18 @@ main {
   padding-top: calc(var(--space-sm) + 5px);
 }
 
+@media (min-width: 768px) {
+  main {
+    padding-inline: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  main {
+    padding-inline: 32px;
+  }
+}
+
 .site-title {
   color: var(--color-text);
   font-size: 10vh;
@@ -208,30 +220,8 @@ blockquote {
   line-height: 1;
 }
 
-/* ---- Desktop (≥ 768px) ---- */
-@media (min-width: 768px) {
-  .nav {
-    position: sticky;
-    top: 0;
-    align-self: start;
-  }
-
-  #drawer,
-  #drawer-overlay {
-    display: none;
-  }
-}
-
-/* ---- #03 Responsive: mobile ── < 768px ---- */
+/* ── xs/sm (<768px): hamburger & drawer ── */
 @media (max-width: 767px) {
-  body {
-    grid-template-areas:
-      "header"
-      "main"
-      "footer";
-    grid-template-columns: 1fr;
-  }
-
   header {
     position: sticky;
     top: 0;
@@ -245,15 +235,18 @@ blockquote {
   .nav {
     display: none;
   }
+}
 
-  .home,
-  .term {
-    grid-template-areas: "content" "posts";
-    grid-template-columns: 1fr;
+/* ── md+ (≥768px): inline nav, no drawer ── */
+@media (min-width: 768px) {
+  #drawer,
+  #drawer-overlay {
+    display: none;
   }
 
-  .page {
-    grid-template-areas: "content" "aside";
-    grid-template-columns: 1fr;
+  .nav {
+    position: sticky;
+    top: 0;
+    align-self: start;
   }
 }
