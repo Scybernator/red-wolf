@@ -90,7 +90,7 @@ main {
 
 .site-title {
   color: var(--color-text);
-  font-size: 10vh;
+  font-size: clamp(2rem, 10vh, 4rem);
 }
 
 .hero {
@@ -98,7 +98,24 @@ main {
   border-bottom: thin solid var(--color-accent);
   border-radius: 50px;
   box-shadow: var(--shadow-md);
-  font-size: x-large;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+}
+
+.hero-inner {
+  padding: 6px;
+}
+
+.hero-inner img {
+  max-width: 250px;
+}
+
+.hero-inner p {
+  text-indent: 2em;
+}
+
+.image-left {
+  float: left;
+  margin-right: 15px;
 }
 
 .page-card {
@@ -210,6 +227,10 @@ blockquote {
 
   .page-card:first-child .page-card-img {
     max-width: 100%;
+  }
+
+  .hero-inner img {
+    max-width: 160px;
   }
 }
 
