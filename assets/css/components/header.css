@@ -27,4 +27,5 @@ header .site-title {
 
 header #hamburger {
   color: #FFFFFF;
+  margin-left: auto;
 }
