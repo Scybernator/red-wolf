@@ -7,7 +7,7 @@
 {{ $image := partial "imagextractor.html" $page }}
 <section class="{{ $class }}">
     {{ if $page.Draft }}<span class="draft-badge">DRAFT</span>{{ end }}
-    <h2>
+    <h2 class="page-card-title">
         <a href="{{ $page.RelPermalink }}">{{ $page.LinkTitle }}
             {{if $page.Params.subtitle }}: {{ $page.Params.subtitle }}{{ end }}
         </a>
