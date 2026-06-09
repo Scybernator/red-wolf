@@ -45,21 +45,25 @@ Defined via CSS custom properties in `assets/css/main.css:7`.
 
 ## Header
 
-- Hamburger menu button: left-aligned, hidden on desktop (≥ 768px).
-- Header: `position: sticky` on mobile only; static on desktop.
+- Hamburger menu button: left-aligned, hidden on md+ (≥ 768px).
+- Header: `position: sticky` on xs/sm only; static on md+.
 - Logo + site title remain as-is pending palette decisions.
 
 ## Layout & responsiveness
 
-- **Breakpoints**: Bootstrap's `md` (768px) as the mobile ↔ desktop threshold.
-- **Mobile (< 768px)**:
-  - Nav becomes a slide-in drawer from the left, toggled by a hamburger button.
+- **Breakpoints**: Bootstrap's six tiers — xs (<576px), sm (≥576px), md (≥768px), lg (≥992px), xl (≥1200px), xxl (≥1400px).
+- **xs, sm (<768px)**:
+  - Nav becomes a slide-in drawer from the right, toggled by a hamburger button.
   - Content goes full-width.
   - Posts (home/term) go full-width.
-  - Aside (.page) becomes full-width below content.
-- **Desktop (≥ 768px)**:
-  - Three-column grid on `.page` (nav | content | aside).
-  - Two-column grid on `.home` and `.term` (nav | content/posts).
+  - Aside (`.page`) stacks full-width below content.
+- **md (768–991px)**:
+  - `.page`: two-column grid (nav | content). Aside flows below content.
+  - `.home`, `.term`: two-column grid (nav | posts). Aside is empty.
+  - Nav is inline (sticky, left column), no drawer.
+- **lg, xl, xxl (≥992px)**:
+  - `.page`: three-column grid (nav | content | aside).
+  - `.home`, `.term`: two-column grid (nav | posts).
 
 ## Tag cloud
 
@@ -93,7 +97,6 @@ Defined via CSS custom properties in `assets/css/main.css:7`.
 - **Home page**: featured cards (and the auto-feature fallback) appear only on page 1. Hero content (`.Content` from `_index.md` + hero image) also only on page 1. Tag cloud nav persists on all pages.
 - **Term page**: simple pagination of all `.Pages`, no featured split or first-page treatment.
 - **Controls**: numbered pill buttons with prev/next arrows, styled in the earthy palette. Absent when total pages ≤ 1.
-  - Empty asides on `.home` and `.term` to be removed when implementation begins.
 
 ## Draft badge
 
@@ -123,6 +126,6 @@ Defined via CSS custom properties in `assets/css/main.css:7`.
 ## Floating footnotes
 
 - On `.page` layouts, Hugo's markdown footnotes (`<div class="footnotes">`) are moved from `.content` to `.aside` via JavaScript on page load.
-- At window widths ≥ 768px, each footnote `<li>` is positioned absolutely within the aside column, aligned vertically beside its in-text reference. A `ResizeObserver` on `.content` recalculates positions on dimension changes.
-- Below 768px, footnotes render in normal flow within the aside (which stacks below `.content` on mobile).
+- At window widths ≥ 992px (lg+), each footnote `<li>` is positioned absolutely within the aside column, aligned vertically beside its in-text reference. A `ResizeObserver` on `.content` recalculates positions on dimension changes.
+- Below 992px, footnotes render in normal flow within the aside (which stacks below `.content` on mobile/tablet).
 - **Opt-out**: `disableFloatingFootnotes: true` in `hugo.toml` `[params]` (site-wide) or in page front matter (per-page). Enabled by default.

@@ -44,11 +44,19 @@
   font-size: 0.85em;
 }
 
+.table-wrapper {
+  margin-block: var(--space-md);
+}
+
+.table-wrapper table {
+  margin-block: 0;
+  overflow: visible;
+}
+
 @media (max-width: 767px) {
-  .content table,
-  .posts table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+  .page > .content,
+  .home > .posts,
+  .term > .posts {
+    min-width: 0;
   }
 }
