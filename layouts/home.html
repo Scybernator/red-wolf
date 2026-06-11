@@ -16,16 +16,16 @@
     {{ $paginator := .Paginate $paginatePages }}
     {{ if eq $paginator.PageNumber 1 }}
     <div class="hero">
-      {{ $about := site.GetPage "/about" }}{{ with $about }}<a href="{{ .RelPermalink }}" style="text-decoration: none; color: inherit;">{{ end }}
       <div class="hero-inner">
+        {{ $about := site.GetPage "/about" }}{{ with $about }}<a href="{{ .RelPermalink }}" style="text-decoration: none; color: inherit;">{{ end }}
         {{ $image := resources.GetMatch "images/hero.png" }}
         {{ $mask := images.Mask (resources.Get "images/circle_mask.png") }}
         {{ with $image | images.Filter $mask}}
         <img src="{{ .RelPermalink }}" class="image-left">
+        {{ if $about }}</a>{{ end }}
         {{ end }}
         {{ .Content }}
       </div>
-      {{ if $about }}</a>{{ end }}
     </div>
     {{ end }}
     {{ if eq $paginator.PageNumber 1 }}
